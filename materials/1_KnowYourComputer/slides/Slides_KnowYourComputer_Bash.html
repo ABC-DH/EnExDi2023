@@ -1,0 +1,355 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>bash</title>
+
+		<link rel="stylesheet" href="reveal.js_DO-NOT-TOUCH/css/reset.css">
+		<link rel="stylesheet" href="reveal.js_DO-NOT-TOUCH/css/reveal.css">
+		<link rel="stylesheet" href="reveal.js_DO-NOT-TOUCH/css/theme/white.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="reveal.js_DO-NOT-TOUCH/lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js_DO-NOT-TOUCH/css/print/pdf.css' : 'reveal.js_DO-NOT-TOUCH/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<style type="text/css">
+			.highlight {
+				/* color: red;  green = #00FF00 */
+				text-decoration: underline; 
+				text-decoration-color: red;
+			}
+			.smallest {
+				font-size: 0.3em;
+			}
+			.smaller {
+				font-size: 0.6em;
+			}
+			.small {
+				font-size: 0.8em;
+			}
+			.big {
+				font-size: 1.3em;
+				font-weight: bold;
+			}
+			.underline {
+				text-decoration: underline; 
+				text-decoration-color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+
+
+				<!-- <a title="U.S. Census [Public domain]" href="https://commons.wikimedia.org/wiki/File:Early_US_Census_Machines_1960_08012.jpg"><img width="512" alt="Early US Census Machines 1960 08012" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Early_US_Census_Machines_1960_08012.jpg/512px-Early_US_Census_Machines_1960_08012.jpg"></a> -->
+				<section>
+					<p class="big">Get to know your computer</p>
+					<img src="img/Early_US_Census_Machines_1960_08012.jpg" width="30%">
+					<p class="small underline">Simone Rebora (University of Mainz / ABC-DH), <em>EnExDi2023</em></p>
+					<p class="smaller">Slides based on Spadini, Elena. "Get to know your computer .1". <em>Encoder, Exploiter, Diffuser. Les humanités numériques dans les projets de recherche</em>. Poitiers, 2020. (CC-BY)</p>
+				</section>
+				
+				<section>
+					<ol>
+						<li>Computational thinking
+							<ul>
+								<li>Information</li>
+								<li>Communication</li>
+								<li>Collaboration</li>
+							</ul>
+						</li>
+						<li>Practical activities
+							<ul>
+								<li>Bash</li>
+								<li>Git</li>
+							</ul>
+						</li>	
+					</ol>
+				</section>
+			
+
+				<section>
+					1.1 Information
+				</section>
+
+				<section>
+					<h3>Knowledge representation</h3>
+					<h4>(in the human mind)</h4>
+					<p class="smallest"><a title="Leonardo da Vinci, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Da_Vinci_Studies_of_Embryos_Luc_Viatour.jpg"><img width=27% alt="Da Vinci Studies of Embryos Luc Viatour" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Da_Vinci_Studies_of_Embryos_Luc_Viatour.jpg/256px-Da_Vinci_Studies_of_Embryos_Luc_Viatour.jpg"></a><br/>Leonardo Da Vinci, Public domain, via Wikimedia Commons <a href="https://commons.wikimedia.org/wiki/File:Da_Vinci_Studies_of_Embryos_Luc_Viatour.jpg">Link</a></p>
+					<p class="small">...human intuition / computer instructions...</p>
+
+				</section>
+
+				<section>
+					<h3>Knowledge representation</h3>
+					<h4>(in the computer)</h4>
+					<img src="img/Screenshot_1.png" width="60%">
+					<p class="small">...human intuition / computer instructions...</p>
+
+				</section>
+
+
+				<section>
+					<h3>Knowledge representation</h3>
+					<h4>The File system</h4>
+					<img src="img/Screenshot_2.png" width="100%">	
+				</section>
+
+
+				<section>
+					<img src="img/fileSystemEle.jpg" width="100%">
+				</section>
+
+				<section>
+					1.2 Communication
+				</section>
+
+
+				<section>
+					<img src="img/Communication_1.jpg" width="100%">
+				</section>
+
+				<section>
+					<img src="img/Communication_2.jpg" width="100%">
+				</section>
+
+				<section>
+					<h3>Programming languages</h3>
+					<img src="img/Communication_3.jpg" width="100%">
+				</section>
+
+
+				<section>
+					<h3>Programming languages</h3>
+					<img src="img/Rpy.jpg" width="100%">
+				</section>
+
+
+				<section>
+					<h3>Bash</h3>
+					<p>is a <span class="highlight">command language</span> and script language.</p>
+					<p class="smallest"><a href="https://commons.wikimedia.org/wiki/File:HypertextEditingSystemConsoleBrownUniv1969.jpg#/media/File:HypertextEditingSystemConsoleBrownUniv1969.jpg"><img width="60%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/HypertextEditingSystemConsoleBrownUniv1969.jpg/1200px-HypertextEditingSystemConsoleBrownUniv1969.jpg" alt="HypertextEditingSystemConsoleBrownUniv1969.jpg"></a><br>By Gregory Lloyd - personal photograph, <a href="https://creativecommons.org/licenses/by/2.0" title="Creative Commons Attribution 2.0">CC BY 2.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=89019">Link</a></p>
+				</section>
+
+				
+				<section>
+					<h3>BASH</h3>
+					<p>is a command line <span class="highlight">interpreter</span> (Unix shell), which translates the command language into instructions for the computer. It runs in a <span class="highlight">terminal</span>.</p>
+					
+					<!--<span class="smallest" style="margin-right: 300px"><a title="Unbekannt [Public domain]" href="https://commons.wikimedia.org/wiki/File:Cygwin_logo.svg"><img width="10%" alt="Cygwin logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Cygwin_logo.svg/512px-Cygwin_logo.svg.png"></a></span>-->
+
+					<span class="smallest"><a href="https://commons.wikimedia.org/wiki/File:DEC_VT100_terminal_transparent.png#/media/File:DEC_VT100_terminal_transparent.png"><img width="36%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/DEC_VT100_terminal_transparent.png/1200px-DEC_VT100_terminal_transparent.png" alt="DEC VT100 terminal transparent.png"></a><br>By <a href="//commons.wikimedia.org/w/index.php?title=User:Gorthmog&amp;action=edit&amp;redlink=1" class="new" title="User:Gorthmog (page does not exist)">Gorthmog</a> - <span class="int-own-work" lang="en">Own work. </span><a href="//commons.wikimedia.org/wiki/File:Extracted_image_icon.png" class="image"></a>This file has been extracted from another file: <a href="//commons.wikimedia.org/wiki/File:DEC_VT100_terminal.jpg" title="File:DEC VT100 terminal.jpg">DEC VT100 terminal.jpg</a><span class="wpImageAnnotatorControl wpImageAnnotatorOff"><a href="//commons.wikimedia.org/wiki/File:DEC_VT100_terminal.jpg" class="image" title="original file"></a></span>, <a href="https://creativecommons.org/licenses/by-sa/4.0" title="Creative Commons Attribution-Share Alike 4.0">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/w/index.php?curid=78497051">Link</a></span>
+				</section>
+
+
+				<section>
+					1.3 Collaboration
+				</section>
+
+
+				<section>
+					<h3>Github</h3>
+					<p><a href="http://github.com" target="blank">Github</a> is a development platform, used to share and work collaboratively on code. It uses the <span class="highlight">version control system git</span>.</p>
+					<img width="70%" src="img/git.gif">
+					<p class="smallest">https://tekraze.com/2018/01/introduction-git-version-control/</p>
+				</section>
+				
+				<section>
+					<h3>Github</h3>
+					<h4>Version control / collaboration</h4>
+					<img src="img/GitEnExDi.png" width="80%">
+				</section>
+
+
+				<section>
+					<h3>Github</h3>
+					<h4>Open / public</h4>
+					<img src="img/GitEnExDi2022.png" width="80%">
+				</section>
+
+
+				<section>
+					2.1 Bash
+				</section>
+
+
+				<section>
+					<h3>Open Terminal</h3>
+					<ul>
+						<li>For Linux Ubuntu: you can type Ctrl-Alt-T or you can type Terminal into the Search box.</li>
+						<li>For Windows: open Git Bash</li>
+						<li>For Mac OS X: the Terminal.app that you will find in the Applications → Utilities folder.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h3>Navigate your file system</h3>
+					<h4>1. Where am I?</h4>
+					<br/>
+					<pre><code class="nohighlight">pwd</code></pre>
+					<p class="small">Shows the "working directory"</p>
+				</section>
+
+				<section>
+					<h3>Navigate your file system</h3>
+					<h4>2. What is around me?</h4>
+					<br/>
+					<pre><code class="nohighlight">ls</code></pre>
+					<p class="small">Lists the names of the files and directories in the current directory</p>
+				</section>
+
+				<section>
+					<h3>Navigate your file system</h3>
+					<h4>3. Move from one side to the other</h4>
+					<br/>
+					<pre><code class="nohighlight">cd</code></pre>
+					<p class="small">Changes the working directory</p>
+					<br/>
+					<ul class="smaller">
+						<li>Tip 1. Use Tab for auto-completion <a title="Yonidebest, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Button_tab.png"><img width="48" height="32" alt="Button tab" src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Button_tab.png"></a></li>
+						<li>Tip 2. Arrow up and down to move in the terminal history <a title="Edycop, CC BY-SA 3.0 &lt;https://creativecommons.org/licenses/by-sa/3.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Up_key.png"><img width="32" alt="Up key" src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Up_key.png"></a> <a title="Edycop, CC BY-SA 3.0 &lt;https://creativecommons.org/licenses/by-sa/3.0&gt;, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Down_key.png"><img width="32" alt="Down key" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Down_key.png"></a></li>
+					</ul>
+
+				</section>
+
+
+				<section>
+					<h3>Navigate your file system</h3>
+					<h4>4. Get back (to where you once belonged...)</h4>
+					<br/>
+					<pre><code class="nohighlight">cd ..</code></pre>
+					<p class="small">Goes back to the "father" directory</p>
+					<img src="img/fileSystemEle.jpg" width="45%">
+				</section>
+
+
+				<section>
+					2.2 Git
+				</section>
+
+
+				<section>
+					<h3>Github</h3>
+					In the terminal, once you are in the location where you want to download EnExDi2023 materials, type:<br/>
+					<pre><code class="nohighlight">git clone https://github.com/ABC-DH/EnExDi2023.git</code></pre>
+					<p style="font-size:0.9em"><span class="highlight">How to get the link</span>: go to<br/><a href="https://bit.ly/EnExDi2023">bit.ly/EnExDi2023</a>, click the green button "Clone or download" and copy the link that will appear.</p>
+					<p style="font-size:0.9em"><span class="highlight">Alternative (if <em>git</em> not installed)</span>: go to<br/><a href="https://bit.ly/EnExDi2023">bit.ly/EnExDi2023</a>, click the green button "Clone or download", choose Download Zip. Unzip it and place where you want in your computer.</p>
+				</section>
+
+
+				<section>
+					<h3>Github</h3>
+					<h4>Pull remote changes</h4>
+					<p style="font-size:0.6em"><em>...if the owner of the repository has changed/added/deleted any file...</em></p>
+					<br/>
+					<div class="fragment">
+					1. Move to the EnExDi2023 directory:<br/>
+					<pre><code class="nohighlight">cd EnExDi2023</code></pre>
+					</div>
+					<div class="fragment">
+					2. Pull the remote changes:<br/>
+					<pre><code class="nohighlight">git pull</code></pre>
+					</div>
+				</section>
+
+
+				<section class="small">
+					<h3>Good practice (suggested)</h3>
+					<p>
+					At the beginning of <span class="highlight">every course</span>:
+						<ol>
+							<li>Open your terminal</li>
+							<li>Navigate to EnExDi2023, For example:
+								<pre><code class="nohighlight">cd EnExDi2023</code></pre></li>
+							<li>Type <pre><code class="nohighlight">git pull</code></pre> to update the folder.</li>
+						</ol>
+					</p>
+					<p style="font-size:0.9em"><span class="highlight">Alternative (if <em>git</em> not installed)</span>: go to<br/><a href="https://github.com/ABC-DH/EnExDi2022">https://github.com/ABC-DH/EnExDi2022</a>, click the green button "Clone or download", choose Download Zip. Unzip it and place where you want in your computer (and delete the old version!).</p>
+				</section>
+
+				<section>
+					Additional materials
+				</section>
+
+				<section>
+					<div>
+						<img src="img/fileSystemEle.jpg" width="50%">
+						<p class="small">Absolute path (from root, starts with "/" )</p>
+						<pre><code class="nohighlight">/home/espadini/Documents/EnExDi2020</code></pre>
+					</div>
+					<div class="fragment">
+						<p class="small">Relative path (from <code class="nohighlight smaller" style="background-color: lightgrey">/home/espadini</code>)</p>
+						<pre><code class="nohighlight">Documents/EnExDi2020</code></pre>
+						<pre><code class="nohighlight">./Documents/EnExDi2020</code></pre>
+					</div>
+				</section>
+
+				<section>
+					<div>
+						<img src="img/fileSystemEle.jpg" width="60%">
+						<p class="small">From EnExDi2020 to Desktop</p>
+						<pre><code class="nohighlight">../../Desktop</code></pre>
+					</div>
+					<div class="fragment">
+						<p class="small">From Desktop to EnExDi2020</p>
+						<pre><code class="nohighlight">../Documents/EnExDi</code></pre>
+					</div>
+				</section>
+
+				<section>
+					<img src="img/fileSystemEle.jpg" width="60%">
+					<p class="small">From Home to EnExDi2019</p>
+					<pre class="fragment"><code class="nohighlight">espadini/Documents/EnExDi2019</code></pre>
+					<p class="small fragment">From Dropbox to Bin</p>
+					<pre class="fragment"><code class="nohighlight">../../../bin</code></pre>
+				</section>
+
+				
+				<section>
+					<p>File naming conventions</p>
+					<ul class="smaller">
+						<li>No space characters or punctuation other than hyphens (-), underscores (_), and periods (.) should be used in filenames</li>
+						<li>Choose a capitalization strategy and observe it consistently throughout your project</li>
+						<li>Filenames that contain multiple logical words can avoid the use of spaces and still maintain legibility by using underscores, hyphens, or camel case, e.g., “index_places.txt”, “index-places.txt”, or “indexPlaces.txt”. Choose a convention and use it consistently</li>
+						<li>If you keep multiple versions or drafts of files in the same directory, include a date stamp in the filename. We recommend a year-month-date format, with a four-digit year and two-digit months and dates, e.g., “2016-07-30_index-places.txt”.</li>
+						<li>Filenames should have a meaningful filename extension, like .xml, .txt, .docx</li>
+					</ul>
+					<p class="smallest">Source: <a href="https://github.com/DiXiT-eu/collatex-tutorial/blob/master/unit1/Command_line.ipynb">https://github.com/DiXiT-eu/collatex-tutorial/blob/master/unit1/Command_line.ipynb</a></p>
+					<p class="small">Take a minute to make extensions visible after this course!</p>
+				</section>
+
+
+
+			</div>
+		</div>
+
+		<script src="reveal.js_DO-NOT-TOUCH/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				hash: true,
+				dependencies: [
+					{ src: 'reveal.js_DO-NOT-TOUCH/plugin/markdown/marked.js' },
+					{ src: 'reveal.js_DO-NOT-TOUCH/plugin/markdown/markdown.js' },
+					{ src: 'reveal.js_DO-NOT-TOUCH/plugin/highlight/highlight.js' },
+					{ src: 'reveal.js_DO-NOT-TOUCH/plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
