@@ -13,7 +13,7 @@
 # (if a warning is shown above)
 
 # set the working directory
-setwd("materials/4_DistantReading/")
+setwd("/cloud/project/materials/4_DistantReading/")
 
 ### Define variables
 # here you define the variables for your topic modeling

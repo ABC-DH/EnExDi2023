@@ -13,7 +13,7 @@
 # (if a warning is shown above)
 
 # set the working directory
-setwd("materials/4_DistantReading/")
+setwd("/cloud/project/materials/4_DistantReading/")
 
 ### 1. Delta analysis
 
@@ -26,6 +26,7 @@ library(networkD3)
 # Stylo will work by default with the files in the "corpus" folder
 
 # First analysis (...with eyes closed...)
+# ...remember to extend the plots window before running the command!
 stylo()
 
 # notice that stylo has generated a number of new files...
@@ -33,7 +34,8 @@ stylo()
 
 # Second analysis (specify the analysis features)
 stylo(mfw.min=200, 
-      mfw.max=200)
+      mfw.max=200,
+      distance.measure="dist.wurzburg")
 # for an explanation of all features, see the appendix below
 
 # Third analysis (Consensus tree with 2000 MFW and Cosine Delta distance)

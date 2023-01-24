@@ -13,7 +13,7 @@
 # (if a warning is shown above)
 
 # set the working directory
-setwd("materials/4_DistantReading/")
+setwd("/cloud/project/materials/4_DistantReading/")
 
 ### 1. Basic Syuzhet analysis
 
@@ -48,6 +48,7 @@ plot(
 )
 
 # ...it is still too noisy: we'll need to use some filters
+# (remember to extend the plots window before running the command!)
 simple_plot(syuzhet_vector, title = "Sentiment arc")
 
 # we can save the plot as a png file
@@ -57,12 +58,24 @@ dev.off()
 
 # we can also look at the basic emotions (Plutchik)
 syuzhet_emotions <- get_nrc_sentiment(sentences_vector)
+# you might get (another) warning here (please disregard it!)
+
+# add sentences to results 
+syuzhet_emotions$sentence <- sentences_vector
 
 # and visualize the result (in a matrix)
 View(syuzhet_emotions)
 
-# to have an overview, we can calculate the mean for each emotion (i.e. the columns of the matrix)
-colMeans(syuzhet_emotions)
+# create an "anticipation" graph
+simple_plot(syuzhet_emotions$anticipation, title = "Anticipation arc")
+
+# we can save the plot as a png file
+png("Anticipation_arc.png", height = 900, width = 1600, res = 100)
+simple_plot(syuzhet_vector, title = "Sentiment arc")
+dev.off()
+
+# to have an overview, we can calculate the mean for each emotion (i.e. the first columns of the matrix)
+colMeans(syuzhet_emotions[,1:8])
 
 ### 2. Opening the Syuzhet box
 
