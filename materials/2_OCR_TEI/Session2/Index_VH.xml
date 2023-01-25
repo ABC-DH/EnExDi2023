@@ -37,7 +37,7 @@
                 <!--  Méthode n°1, la plus simple
                <p>Notre-Dame de Paris, Texte établi par Paul Meurice, Librairie Ollendorff, 1904, [volume 1] [Section A.] Roman, tome II. (p. 43-84)</p> -->
                 <!-- Méthode n°2 -->
-                <bibl>
+                <bibl xml:id="NDP">
                     <title type="main">Notre-Dame de Paris</title>
                     <title type="subtitle">Livre Deuxième</title>
                     <author><forename>Victor</forename>
@@ -172,7 +172,8 @@
                 <div type="chapter" n="1">
                     <!-- section du chapitre premier-->
                     <head>De Charybde en Sylla</head>
-                    <p>La nuit arrive de bonne heure en janvier. Les rues étaient déjà sombres quand
+                    <p>
+                        <cit corresp="#NDP"><quote>le livre de paris</quote><note>Hugo, Notre-Dame</note></cit> La nuit arrive de bonne heure en janvier. Les rues étaient déjà sombres quand
                         <persName ref="#Gringoire">Gringoire</persName> sortit du <placeName
                             ref="#Palais_de_Justice">Palais</placeName>. Cette nuit tombée lui plut
                         ; il lui tardait d’aborder quelque ruelle obscure et déserte pour y méditer
